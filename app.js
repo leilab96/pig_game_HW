@@ -1,6 +1,6 @@
 // változó deklarálás
 let scores, roundScore, activePlayer, previousDices, finalScore;
-finalScore = 20; // alapértelmezetten 20 a final score, ha nem írnak be semmit
+
 function newGame() {
   // a játékosok pontszámai, mindkét játákos null ponttal indul
   // értékadás : value assignment
