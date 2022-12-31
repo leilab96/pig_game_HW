@@ -1,6 +1,6 @@
 // változó deklarálás
-let scores, roundScore, activePlayer, previousDices;
-
+let scores, roundScore, activePlayer, previousDices, finalScore;
+finalScore = 20; // alapértelmezetten 20 a final score, ha nem írnak be semmit
 function newGame() {
   // a játékosok pontszámai, mindkét játákos null ponttal indul
   // értékadás : value assignment
@@ -38,6 +38,12 @@ function newGame() {
 
   document.querySelector(".player-1-panel").classList.remove("active");
   document.querySelector(".player-0-panel").classList.add("active");
+  finalScore = document.getElementsByClassName("final-score")[0].value;
+  if (finalScore <= 0) {
+    console.log("Invalid value for Final Score. Default value is 100.");
+    finalScore = 100;
+  }
+  console.log(finalScore);
 }
 
 newGame();
@@ -104,7 +110,7 @@ document.querySelector(".btn-hold").addEventListener("click", function () {
     scores[activePlayer];
 
   // 3. nézzük meg hogy van e nyertes
-  if (scores[activePlayer] >= 20) {
+  if (scores[activePlayer] >= finalScore) {
     document
       .querySelector(`.player-${activePlayer}-panel`)
       .classList.add("winner");
