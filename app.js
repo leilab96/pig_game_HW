@@ -43,7 +43,7 @@ function newGame() {
     console.log("Invalid value for Final Score. Default value is 100.");
     finalScore = 100;
   }
-  console.log(finalScore);
+  console.log("Final Score value is: " + finalScore);
 }
 
 newGame();
