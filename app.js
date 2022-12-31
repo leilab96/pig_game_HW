@@ -1,5 +1,5 @@
 // változó deklarálás
-let scores, roundScore, activePlayer;
+let scores, roundScore, activePlayer, previousDices;
 
 function newGame() {
   // a játékosok pontszámai, mindkét játákos null ponttal indul
