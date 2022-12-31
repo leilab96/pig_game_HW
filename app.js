@@ -55,10 +55,13 @@ document.querySelector(".btn-roll").addEventListener("click", function () {
   // először megvizsgálja hogy ha hatot dobtunk és hat volt az előző dobás értéke, akkor kinullázza a score-t és a másik játékosra ugrik
   if (previousDices[activePlayer] === 6 && dice === 6) {
     scores[activePlayer] = 0;
+    //UI-on is frissítjük a score értéket
     document.querySelector("#score-" + activePlayer).textContent =
       scores[activePlayer];
     previousDices[activePlayer] = 0;
     nextPlayer();
+    console.log("You threw 6 twice => Lost your points");
+    //console.log(previousDices)
     return;
   }
   // ha nem 1 a dobott érték akkor felírjuk a pontszámot, és ugyanaz a játékos dobhat újra
